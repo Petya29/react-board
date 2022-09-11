@@ -1,5 +1,5 @@
-import { NavBar } from "./NavBar";
+import { AppBar } from "./AppBar";
 
 export {
-    NavBar
+    AppBar
 }

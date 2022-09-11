@@ -1,12 +1,13 @@
-import { NavBar } from "./components/ui/surfaces";
-import { Home } from "./components/Home";
+import { Board } from "./components/Board";
+import { NavBar } from "./components/partials";
 
 function App() {
-
   return (
     <div className="App">
       <NavBar />
-      <Home />
+      <main>
+        <Board />
+      </main>
     </div>
   )
 }

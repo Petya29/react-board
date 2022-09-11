@@ -1,8 +1,9 @@
-import { BellAlertIcon, InfoCircleIcon } from "../icons";
+import { BellAlertIcon, InfoCircleIcon } from "../ui/icons";
+import { AppBar } from "../ui/surfaces";
 
 export const NavBar = () => {
     return (
-        <header className='bg-[#1e1e1ec7] text-white'>
+        <AppBar position="sticky" style={{ backgroundColor: '#1e1e1ec7' }}>
             <div className='w-ful font-bold flex justify-between items-center py-2 px-6'>
                 <div className='text-2xl'>
                     react-board
@@ -12,6 +13,6 @@ export const NavBar = () => {
                     <BellAlertIcon style={{ cursor: 'pointer' }} />
                 </div>
             </div>
-        </header>
+        </AppBar>
     )
 }
