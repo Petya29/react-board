@@ -9,8 +9,8 @@ export const NavBar = () => {
                     react-board
                 </div>
                 <div className='flex gap-4'>
-                    <InfoCircleIcon style={{ cursor: 'pointer' }} />
-                    <BellAlertIcon style={{ cursor: 'pointer' }} />
+                    <InfoCircleIcon style={{ cursor: 'pointer' }} rippleProps={{ duration: 750 }} />
+                    <BellAlertIcon style={{ cursor: 'pointer' }} rippleProps={{ duration: 750 }} />
                 </div>
             </div>
         </AppBar>
