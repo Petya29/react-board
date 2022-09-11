@@ -8,11 +8,17 @@ export const AppBar = ({
     position = 'static',
     style,
     children,
+    className,
     ...rest
 }: AppBarProps) => {
     return (
         <header
-            className='bg-[#1e1e1e] text-white w-full'
+            className={[
+                "bg-[#1e1e1e]",
+                "text-white",
+                "w-full",
+                className
+            ].join(" ")}
             style={{
                 ...style,
                 position: position,

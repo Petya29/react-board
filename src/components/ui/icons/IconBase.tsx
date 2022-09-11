@@ -1,5 +1,5 @@
-import { HTMLAttributes } from "react"
-import { Ripple, RippleProps } from "../utils"
+import { HTMLAttributes } from "react";
+import { Ripple, RippleProps } from "../utils";
 
 export type IconBaseProps = {
     fill?: string,
@@ -15,6 +15,7 @@ export const IconBase = ({
     isHoverable = true,
     disableRipple = false,
     rippleProps,
+    className,
     children,
     ...rest
 }: IconBaseProps) => {
@@ -28,7 +29,8 @@ export const IconBase = ({
                 "h-8",
                 "rounded-[4px]",
                 disableRipple ? "" : "relative overflow-hidden",
-                isHoverable ? "hover:bg-[#3d3d3d]" : ""
+                isHoverable ? "hover:bg-[#3d3d3d]" : "",
+                className
             ].join(" ")}
             {...rest}
         >
