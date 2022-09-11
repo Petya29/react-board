@@ -1,4 +1,4 @@
-import { BellAlertIcon, InfoCircleIcon } from "../icons"
+import { BellAlertIcon, InfoCircleIcon } from "../icons";
 
 export const NavBar = () => {
     return (
