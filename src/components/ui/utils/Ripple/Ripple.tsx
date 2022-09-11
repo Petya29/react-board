@@ -25,10 +25,11 @@ const useDebouncedRippleCleanUp = ({ rippleCount, duration, cleanUpFunction }: u
 
 export type RippleProps = {
     duration?: number,
+    opacity?: CSSProperties["opacity"],
     backgroundColor?: CSSProperties["backgroundColor"]
 }
 
-export const Ripple = ({ duration = 1000, backgroundColor = '#ffffff' }: RippleProps) => {
+export const Ripple = ({ duration = 1000, opacity = .5, backgroundColor = '#ffffff' }: RippleProps) => {
 
     const [rippleArray, setRippleArray] = useState<{
         x: number;
@@ -74,6 +75,7 @@ export const Ripple = ({ duration = 1000, backgroundColor = '#ffffff' }: RippleP
                             left: ripple.x,
                             width: ripple.size,
                             height: ripple.size,
+                            opacity: opacity,
                             backgroundColor: backgroundColor,
                             animationDuration: `${duration}ms`
                         }}

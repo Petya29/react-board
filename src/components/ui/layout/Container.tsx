@@ -33,7 +33,7 @@ export const Container = ({
                 ContainerSizes[maxWidth],
                 disableGutters ? '' : 'm-auto',
                 className
-            ].join(' ')}
+            ].join(' ').trim()}
         >
             {children}
         </ComponentName>

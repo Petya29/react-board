@@ -31,7 +31,7 @@ export const IconBase = ({
                 disableRipple ? "" : "relative overflow-hidden",
                 isHoverable ? "hover:bg-[#3d3d3d]" : "",
                 className
-            ].join(" ")}
+            ].join(" ").trim()}
             {...rest}
         >
             <svg xmlns="http://www.w3.org/2000/svg" fill={fill} viewBox="0 0 24 24" strokeWidth={1.5} stroke={strokeColor} className="w-6 h-6">

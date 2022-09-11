@@ -18,7 +18,7 @@ export const AppBar = ({
                 "text-white",
                 "w-full",
                 className
-            ].join(" ")}
+            ].join(" ").trim()}
             style={{
                 ...style,
                 position: position,
