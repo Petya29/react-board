@@ -1,6 +1,5 @@
-import { Container, ContainerSizes } from "./Container";
+import { Container } from "./Container";
 
 export {
-    Container,
-    ContainerSizes
+    Container
 }

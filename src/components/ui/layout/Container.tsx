@@ -1,6 +1,6 @@
 import { ElementType, HTMLAttributes } from "react";
 
-export const enum ContainerSizes {
+enum ContainerSizes {
     xs = "max-w-xs",
     sm = "max-w-screen-sm",
     md = "max-w-screen-md",
@@ -13,12 +13,14 @@ export const enum ContainerSizes {
 
 type ContainerProps = {
     component?: ElementType,
-    maxWidth?: ContainerSizes,
+    maxWidth?: keyof typeof ContainerSizes,
+    disableGutters?: boolean,
 } & HTMLAttributes<HTMLElement>
 
 export const Container = ({
     component,
-    maxWidth = ContainerSizes.md,
+    maxWidth = 'full',
+    disableGutters = false,
     className,
     children
 }: ContainerProps) => {
@@ -26,7 +28,13 @@ export const Container = ({
     const ComponentName = component ?? 'div';
 
     return (
-        <ComponentName className={[maxWidth, className].join(' ')}>
+        <ComponentName
+            className={[
+                ContainerSizes[maxWidth],
+                disableGutters ? '' : 'm-auto',
+                className
+            ].join(' ')}
+        >
             {children}
         </ComponentName>
     )
