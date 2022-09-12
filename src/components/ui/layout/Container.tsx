@@ -22,7 +22,8 @@ export const Container = ({
     maxWidth = 'full',
     disableGutters = false,
     className,
-    children
+    children,
+    ...rest
 }: ContainerProps) => {
 
     const ComponentName = component ?? 'div';
@@ -34,6 +35,7 @@ export const Container = ({
                 disableGutters ? '' : 'm-auto',
                 className
             ].join(' ').trim()}
+            {...rest}
         >
             {children}
         </ComponentName>
