@@ -1,12 +1,14 @@
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useRef } from "react";
+import { useLocalStorage } from "../../hooks";
 import { ImageIcon } from "../ui/icons";
 import { Paper } from "../ui/surfaces";
 
 export const ImageSwitcher = () => {
 
     const inputRef = useRef<HTMLInputElement>(null);
+    const executedRef = useRef<boolean>(false);
 
-    const [image, setImage] = useState<string>('');
+    const [image, setImage] = useLocalStorage<string>('bg-image', '');
 
     const handleClick = () => {
         if (inputRef.current) {
@@ -22,6 +24,7 @@ export const ImageSwitcher = () => {
         const reader = new FileReader();
         reader.onloadend = function () {
             if (typeof reader.result === 'string') {
+                executedRef.current = false;
                 setImage(reader.result);
             }
         }
@@ -29,10 +32,20 @@ export const ImageSwitcher = () => {
     }
 
     useEffect(() => {
-        if (image.trim() === '') return;
+        if (executedRef.current || image.trim() === '') return;
+
+        const newImage = new Image();
+        newImage.onerror = () => {
+            document.body.style.background = `url("../../../public/default-bg.jpg") center center no-repeat`;
+            document.body.style.backgroundSize = 'cover';
+            alert('Your background image is not valid not valid');
+        };
+        newImage.src = image;
 
         document.body.style.background = `url(${image}) center center no-repeat`;
         document.body.style.backgroundSize = 'cover';
+
+        executedRef.current = true;
     }, [image]);
 
     return (
