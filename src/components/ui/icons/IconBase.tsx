@@ -1,7 +1,14 @@
 import { HTMLAttributes } from "react";
 import { Ripple, RippleProps } from "../utils";
 
+enum IconSizes {
+    sm = "w-4 h-4",
+    md = "w-6 h-6",
+    lg = "w-8 h-8",
+}
+
 export type IconBaseProps = {
+    size?: keyof typeof IconSizes,
     fill?: string,
     strokeColor?: string,
     isHoverable?: boolean,
@@ -10,6 +17,7 @@ export type IconBaseProps = {
 } & HTMLAttributes<HTMLSpanElement>
 
 export const IconBase = ({
+    size = 'md',
     fill = 'none',
     strokeColor = 'currentcolor',
     isHoverable = true,
@@ -34,7 +42,14 @@ export const IconBase = ({
             ].join(" ").trim()}
             {...rest}
         >
-            <svg xmlns="http://www.w3.org/2000/svg" fill={fill} viewBox="0 0 24 24" strokeWidth={1.5} stroke={strokeColor} className="w-6 h-6">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill={fill}
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke={strokeColor}
+                className={IconSizes[size]}
+            >
                 {children}
             </svg>
             {!disableRipple && <Ripple {...rippleProps} />}
