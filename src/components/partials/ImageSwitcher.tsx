@@ -49,7 +49,7 @@ export const ImageSwitcher = () => {
     }, [image]);
 
     return (
-        <Paper className="absolute bottom-[4%] w-min p-0 m-0 !bg-[#1e1e1ebf]">
+        <Paper className="absolute bottom-[4%] w-min p-1 m-0 !bg-[#1e1e1ebf]">
             <ImageIcon
                 size="lg"
                 strokeColor="#ffffff"

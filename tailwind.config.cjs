@@ -5,7 +5,14 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        'toast-slide-up': {
+          'from': { transform: 'translateY(100%)' },
+          'to': { transform: 'translateY(0)' }
+        },
+      }
+    },
   },
   plugins: [],
 }
