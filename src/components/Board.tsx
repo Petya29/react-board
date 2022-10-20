@@ -1,4 +1,4 @@
-import { ImageSwitcher } from "./partials";
+import { AddCardInput, ImageSwitcher } from "./partials";
 import { Container } from "./ui/layout";
 import { Paper } from "./ui/surfaces";
 import { Ripple } from "./ui/utils";
@@ -11,6 +11,7 @@ export const Board = () => {
                     ripple button
                     <Ripple />
                 </button>
+                <AddCardInput />
             </Paper>
             <ImageSwitcher />
         </Container>
