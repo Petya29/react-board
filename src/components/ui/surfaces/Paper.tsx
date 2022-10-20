@@ -1,4 +1,4 @@
-import { ElementType, HTMLAttributes } from "react";
+import { ElementType, forwardRef, HTMLAttributes } from "react";
 
 enum Shadows {
     sm = "shadow-sm",
@@ -23,19 +23,20 @@ type PaperProps = {
     rounded?: keyof typeof Rounds,
 } & HTMLAttributes<HTMLElement>
 
-export const Paper = ({
+export const Paper = forwardRef<HTMLElement, PaperProps>(({
     component,
     shadow = 'sm',
     rounded = 'md',
     className,
     children,
     ...rest
-}: PaperProps) => {
+}: PaperProps, ref) => {
 
     const ComponentName = component ?? 'div';
 
     return (
         <ComponentName
+            ref={ref}
             className={[
                 Shadows[shadow],
                 Rounds[rounded],
@@ -48,4 +49,4 @@ export const Paper = ({
             {children}
         </ComponentName>
     )
-}
+})
