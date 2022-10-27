@@ -38,7 +38,7 @@ export const ImageSwitcher = () => {
         newImage.onerror = () => {
             document.body.style.background = `url("../../../public/default-bg.jpg") center center no-repeat`;
             document.body.style.backgroundSize = 'cover';
-            alert('Your background image is not valid not valid');
+            alert('Your background image is not valid');
         };
         newImage.src = image;
 
@@ -49,7 +49,7 @@ export const ImageSwitcher = () => {
     }, [image]);
 
     return (
-        <Paper className="absolute bottom-[4%] w-min p-1 m-0 !bg-[#1e1e1ebf]">
+        <Paper className="w-min p-1 m-0 !bg-[#1e1e1ebf]">
             <ImageIcon
                 size="lg"
                 strokeColor="#ffffff"
