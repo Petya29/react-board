@@ -64,7 +64,7 @@ export const Column = ({ order, title, cards }: ColumnProps) => {
                     />
                     :
                     <div
-                        className="text-white cursor-pointer w-full my-1 border-solid border-[3px] border-transparent"
+                        className="text-white cursor-pointer w-full my-1 border-solid border-[3px] border-transparent text-ellipsis overflow-hidden whitespace-nowrap"
                         onClick={handleEditable}
                     >
                         {newTitle}
